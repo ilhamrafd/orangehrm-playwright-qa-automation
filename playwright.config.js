@@ -16,6 +16,7 @@ import { trace } from 'node:console';
 export default defineConfig({
   testDir: './orangeHRM',
   /* Run tests in files in parallel */
+  timeout:30000,
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -50,7 +51,11 @@ export default defineConfig({
 
     // {
     //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
+    //   use: { ...devices['Desktop Firefox'],
+    //   trace: 'on',
+    //   screenshot: 'on',
+    //   video: 'on'
+    //    },
     // },
 
     // {
