@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test'
-test.only('Login Section - Positive Case',async function ({page}) {
+test('Login Section - Positive Case',async function ({page}) {
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',{delay:0})
     await page.getByPlaceholder('Username').fill('Admin')
     await page.getByPlaceholder('Password').fill('admin123')

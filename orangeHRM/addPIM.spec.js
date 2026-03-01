@@ -1,0 +1,28 @@
+import {test,expect} from '@playwright/test'
+test("Add PIM - Positive Case",async function ({page}) {
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',{delay:0})
+    await page.getByPlaceholder('Username').fill('Admin',{delay:3000})
+    await page.getByPlaceholder('Password').fill('admin123',{delay:3000})
+    await page.getByRole('button',{name:'Login'}).click()
+    await page.getByText('PIM').click()
+    await page.getByRole('button',{name:' Add'}).click()
+    await page.getByPlaceholder('First Name').fill('John')
+    await page.getByPlaceholder('Middle Name').fill('Donald')
+    await page.getByPlaceholder('Last Name').fill('Doe')
+    await page.getByRole('button',{name:'Save'}).click()
+    expect(page.locator('div').filter(page.getByText('Personal Details'))).toBeVisible()
+})
+
+test("Add PIM - Negative Case",async function ({page}) {
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',{delay:0})
+    await page.getByPlaceholder('Username').fill('Admin',{delay:3000})
+    await page.getByPlaceholder('Password').fill('admin123',{delay:3000})
+    await page.getByRole('button',{name:'Login'}).click()
+    await page.getByText('PIM').click()
+    await page.getByRole('button',{name:' Add'}).click()
+    await page.getByPlaceholder('First Name').fill(' ')
+    await page.getByPlaceholder('Middle Name').fill(' ')
+    await page.getByPlaceholder('Last Name').fill(' ')
+    await page.getByRole('button',{name:'Save'}).click()
+    expect(await page.locator('span').filter(page.getByText('required'))).toBeVisible()
+})

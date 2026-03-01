@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test'
-test("OrangeHRM",async function ({page}) {
+test("Add User",async function ({page}) {
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',{delay:0})
     await page.getByPlaceholder('Username').fill('Admin',{delay:3000})
     await page.getByPlaceholder('Password').fill('admin123',{delay:3000})
