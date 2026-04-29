@@ -1,5 +1,5 @@
 {
-  "name": "QA Automation - OrangeHRM",
+  "name": "qa-automation-orangehrm",
   "version": "1.0.0",
   "description": "QA Automation using Playwright on OrangeHRM website",
   "main": "index.js",
