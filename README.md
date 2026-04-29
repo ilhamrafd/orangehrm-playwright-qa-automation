@@ -13,21 +13,15 @@ This project contains automated test scripts using Playwright for web applicatio
 - Checkout process
 
 ## ⚙️ Setup
+
+# 🚫 .gitignore
+# 🚀 Cara Install dan Upload ke GitHub
 ```bash
 npm install
 npx playwright install
 npm test
 npm run test:report
 
----
-
-# 🚫 .gitignore
-
----
-
-# 🚀 Cara Upload ke GitHub
-
-```bash
 git init
 git add .
 git commit -m "initial QA automation project"
