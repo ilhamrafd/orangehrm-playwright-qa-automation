@@ -9,8 +9,6 @@ This project contains automated test scripts using Playwright for web applicatio
 
 ## 🧪 Test Coverage
 - Login functionality
-- Add to cart
-- Checkout process
 
 ## ⚙️ Setup
 
