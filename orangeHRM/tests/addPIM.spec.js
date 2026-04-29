@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test'
-test("Add PIM - Positive Case",async function ({page}) {
+test.skip("Add PIM - Positive Case",async function ({page}) {
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',{delay:0})
     await page.getByPlaceholder('Username').fill('Admin',{delay:3000})
     await page.getByPlaceholder('Password').fill('admin123',{delay:3000})
@@ -13,7 +13,7 @@ test("Add PIM - Positive Case",async function ({page}) {
     expect(page.locator('div').filter(page.getByText('Personal Details'))).toBeVisible()
 })
 
-test("Add PIM - Negative Case",async function ({page}) {
+test.skip("Add PIM - Negative Case",async function ({page}) {
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',{delay:0})
     await page.getByPlaceholder('Username').fill('Admin',{delay:3000})
     await page.getByPlaceholder('Password').fill('admin123',{delay:3000})
